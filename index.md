@@ -121,6 +121,11 @@ hide: true
       this.animate(this.obj["Rest"], 0);
     }
 
+    startRunning2() {
+      this.stopAnimate();
+      this.animate(this.obj["Run2"], 6);
+    }
+
     stopAnimate() {
       clearInterval(this.tID);
     }
@@ -149,7 +154,11 @@ hide: true
       } else {
         mario.startPuffing();
       }
-    }
+    }else if (event.key === "ArrowUp") {
+      event.preventDefault();
+      if (event.repeat) {
+
+      }}
   });
 
   //touch events that enable animations
@@ -190,10 +199,4 @@ hide: true
 </script>
 Investing in Your Technical Future
 
-Explore the Computer Science Pathway at Del Norte High School. All Del Norte CompSci classes are designed to provide a real-world development experience. Grading is focused on time invested, analytics, participation with peers, and engagement in learning.
 
-- Project-based learning with teacher support
-- Tech Talks by teacher complimented with Student Teaching
-- Course learning includes Coding Languages, DevOps, GitHub, Research and Creativity
-- Student teams practice Agile Development Methodologies: planning, communication, collaboration
-- Class lab time provided and approximately 2-3 hours of homework per week
