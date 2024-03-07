@@ -151,7 +151,7 @@ hide: true
         } else if (mario.currentSpeed === 3) {
           mario.startRunning();
         }
-      }
+      } 
     } else if (event.key === "ArrowLeft") {
       event.preventDefault();
       if (event.repeat) {
@@ -159,10 +159,11 @@ hide: true
       } else {
         if (mario.currentSpeed === 0) {
         mario.startWalkingLeft();
-      } else if (mario.currentSpeed === -3) {
+      } else if (mario.currentSpeed === 3) {
         mario.startRunningLeft();
       }
-    }}
+    }
+    }
   });
 
   //touch events that enable animations
@@ -179,7 +180,7 @@ hide: true
     // move left
     if (mario.currentSpeed === 0) { // if at rest, go to walking
       mario.startWalkingLeft();
-    } else if (mario.currentSpeed === -3) { // if walking, go to running
+    } else if (mario.currentSpeed === 3) { // if walking, go to running
       mario.startRunningLeft();
     } else {
       mario.startPuffing();
