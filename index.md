@@ -185,7 +185,7 @@ hide: true
       mario.startPuffing();
     }
   }
-});
+);
 
   //stop animation on window blur
   window.addEventListener("blur", () => {
