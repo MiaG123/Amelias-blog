@@ -121,15 +121,20 @@ hide: true
       this.animate(this.obj["Rest"], 0);
     }
 
-    startRunning2() {
+    startWalkingLeft() {
       this.stopAnimate();
-      this.animate(this.obj["Run2"], 6);
+      this.animate(this.obj["walkL"], -3); //negative speed for left movment, chack meta data for walkL
+    }
+
+    startRunningLeft() {
+        this.stopAnimate();
+        this.animate(this.obj["run1L"], -6); //negative speed for left movment, chack meta data for run1L
     }
 
     stopAnimate() {
       clearInterval(this.tID);
     }
-  }
+
 
   const mario = new Mario(mario_metadata);
 
@@ -148,19 +153,18 @@ hide: true
         }
       }
     } else if (event.key === "ArrowLeft") {
-      event.preventDefault();
-      if (event.repeat) {
-        mario.stopAnimate();
-      } else {
-        mario.startPuffing();
+    event.preventDefault();
+    if (event.repeat) {
+      mario.stopAnimate();
+    } else {
+      if (mario.currentSpeed === 0) {
+        mario.startWalkingLeft();
+      } else if (mario.currentSpeed === -3) {
+        mario.startRunningLeft();
       }
-    }else if (event.key === "ArrowUp") {
-      event.preventDefault();
-      if (event.repeat) {
-
-      }}
-  });
-
+    }
+  }
+  //...
   //touch events that enable animations
   window.addEventListener("touchstart", (event) => {
     event.preventDefault(); // prevent default browser action
@@ -173,8 +177,13 @@ hide: true
       }
     } else {
       // move left
-      mario.startPuffing();
+     if (currentSpeed === 0) { // if at rest, go to walking
+      mario.startWalkingLeft();
+    } else if (currentSpeed === -3) { // if walking, go to running
+      mario.startRunningLeft();
     }
+  }
+  //...
   });
 
   //stop animation on window blur
