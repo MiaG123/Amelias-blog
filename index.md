@@ -121,20 +121,10 @@ hide: true
       this.animate(this.obj["Rest"], 0);
     }
 
-    startWalkingLeft() {
-      this.stopAnimate();
-      this.animate(this.obj["walkL"], -3); //negative speed for left movment, chack meta data for walkL
-    }
-
-    startRunningLeft() {
-        this.stopAnimate();
-        this.animate(this.obj["run1L"], -6); //negative speed for left movment, chack meta data for run1L
-    }
-
     stopAnimate() {
       clearInterval(this.tID);
     }
-
+  }
 
   const mario = new Mario(mario_metadata);
 
@@ -153,17 +143,14 @@ hide: true
         }
       }
     } else if (event.key === "ArrowLeft") {
-    event.preventDefault();
-    if (event.repeat) {
-      mario.stopanimate();
-    } else {
-      if (mario.currentSpeed === 0) {
-        mario.startWalkingLeft();
-      } else if (mario.currentSpeed === -3) {
-        mario.startRunningLeft();
+      event.preventDefault();
+      if (event.repeat) {
+        mario.stopAnimate();
+      } else {
+        mario.startPuffing();
       }
     }
-  }
+  });
 
   //touch events that enable animations
   window.addEventListener("touchstart", (event) => {
@@ -177,13 +164,8 @@ hide: true
       }
     } else {
       // move left
-     if (currentSpeed === 0) { // if at rest, go to walking
-      mario.startWalkingLeft();
-    } else if (currentSpeed === -3) { // if walking, go to running
-      mario.startRunningLeft();
+      mario.startPuffing();
     }
-  }
-  
   });
 
   //stop animation on window blur
@@ -206,6 +188,12 @@ hide: true
   });
 
 </script>
-Investing in Your Technical Future ...
+Investing in Your Technical Future
 
+Explore the Computer Science Pathway at Del Norte High School. All Del Norte CompSci classes are designed to provide a real-world development experience. Grading is focused on time invested, analytics, participation with peers, and engagement in learning.
 
+- Project-based learning with teacher support
+- Tech Talks by teacher complimented with Student Teaching
+- Course learning includes Coding Languages, DevOps, GitHub, Research and Creativity
+- Student teams practice Agile Development Methodologies: planning, communication, collaboration
+- Class lab time provided and approximately 2-3 hours of homework per week
