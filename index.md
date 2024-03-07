@@ -162,7 +162,7 @@ hide: true
       } else if (mario.currentSpeed === -3) {
         mario.startRunningLeft();
       }
-    }
+    }}
   });
 
   //touch events that enable animations
@@ -185,7 +185,7 @@ hide: true
       mario.startPuffing();
     }
   }
-);
+});
 
   //stop animation on window blur
   window.addEventListener("blur", () => {
