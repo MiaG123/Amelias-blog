@@ -155,7 +155,7 @@ hide: true
     } else if (event.key === "ArrowLeft") {
     event.preventDefault();
     if (event.repeat) {
-      mario.stopAnimate();
+      mario.stopanimate();
     } else {
       if (mario.currentSpeed === 0) {
         mario.startWalkingLeft();
@@ -164,7 +164,7 @@ hide: true
       }
     }
   }
-  //...
+
   //touch events that enable animations
   window.addEventListener("touchstart", (event) => {
     event.preventDefault(); // prevent default browser action
@@ -183,7 +183,7 @@ hide: true
       mario.startRunningLeft();
     }
   }
-  //...
+  
   });
 
   //stop animation on window blur
