@@ -96,14 +96,14 @@ hide: true
       this.animate(this.obj["Walk"], 3);
     }
 
-    startWalkingLeft() {
-      this.stopAnimate();
-      this.animate(this.obj["WalkL"], -3);
-    }
-
     startRunning() {
       this.stopAnimate();
       this.animate(this.obj["Run1"], 6);
+    }
+
+    startWalkingLeft() {
+      this.stopAnimate();
+      this.animate(this.obj["WalkL"], -3);
     }
 
     startRunningLeft() {
@@ -161,8 +161,6 @@ hide: true
         mario.startWalkingLeft();
       } else if (mario.currentSpeed === -3) {
         mario.startRunningLeft();
-      } else {
-        mario.startPuffing();
       }
     }
   });
