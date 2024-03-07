@@ -124,6 +124,16 @@ hide: true
     stopAnimate() {
       clearInterval(this.tID);
     }
+
+    startWalkingLeft() {
+    this.stopAnimate();
+    this.animate(this.obj["WalkL"], -3);  // Negative speed for left movement, check meta data for WalkL
+  }
+
+  startRunningLeft() {
+    this.stopAnimate();
+    this.animate(this.obj["Run1L"], -6);  // Negative speed for left movement, check meta data for Run1L
+  }
   }
 
   const mario = new Mario(mario_metadata);
@@ -147,7 +157,10 @@ hide: true
       if (event.repeat) {
         mario.stopAnimate();
       } else {
-        mario.startPuffing();
+      if (mario.currentSpeed === 0) {
+        mario.startWalkingLeft();
+      } else if (mario.currentSpeed === -3) {
+        mario.startRunningLeft();
       }
     }
   });
