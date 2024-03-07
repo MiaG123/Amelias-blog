@@ -155,7 +155,7 @@ hide: true
     } else if (event.key === "ArrowLeft") {
       event.preventDefault();
       if (event.repeat) {
-        mario.stopAnimate();
+        mario.startPuffing();
       } else {
         if (mario.currentSpeed === 0) {
         mario.startWalkingLeft();
