@@ -62,8 +62,8 @@ hide: true
   class Mario {
     constructor(meta_data) {
       this.tID = null;  //capture setInterval() task ID
-      this.positionX = 5;  // current position of sprite in X direction
-      this.currentSpeed = 50;
+      this.positionX = 0;  // current position of sprite in X direction
+      this.currentSpeed = 0;
       this.marioElement = document.getElementById("mario"); //HTML element of sprite
       this.pixels = {{pixels}}; //pixel offset of images in the sprite, set by liquid constant
       this.interval = 100; //animation time interval
