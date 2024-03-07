@@ -144,9 +144,9 @@ hide: true
     if (event.key === "ArrowRight") {
       event.preventDefault();
       if (event.repeat) {
-        mario.startCheering();
+      mario.startCheering()
       } else {
-        if (mario.currentSpeed === 0) {
+        if (mario.currentSpeed === 0 || mario.currentSpeed === -3 || mario.currentSpeed === -6) {
           mario.startWalking();
         } else if (mario.currentSpeed === 3) {
           mario.startRunning();
@@ -159,8 +159,31 @@ hide: true
       } else {
         if (mario.currentSpeed === 0) {
         mario.startWalkingLeft();
-      } else if (mario.currentSpeed === 3) {
+      } else if (mario.currentSpeed === -3) {
         mario.startRunningLeft();
+      }
+    }
+    }
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      if (event.repeat) {
+        mario.startCheering(); 
+      } else {
+        if (mario.currentSpeed === 0 || mario.currentSpeed === 3 || mario.currentSpeed === 6) {
+          mario.startWalkingLeft();
+        } else if (mario.currentSpeed === -3) {
+          mario.startRunningLeft();
+        }
+      } 
+    } else if (event.key === "ArrowRight") {
+      event.preventDefault();
+      if (event.repeat) {
+        mario.startPuffing();
+      } else {
+        if (mario.currentSpeed === 0) {
+        mario.startWalking();
+      } else if (mario.currentSpeed === 3) {
+        mario.startRunning();
       }
     }
     }
