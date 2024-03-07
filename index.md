@@ -96,9 +96,19 @@ hide: true
       this.animate(this.obj["Walk"], 3);
     }
 
+    startWalkingLeft() {
+      this.stopAnimate();
+      this.animate(this.obj["WalkL"], -3);
+    }
+
     startRunning() {
       this.stopAnimate();
       this.animate(this.obj["Run1"], 6);
+    }
+
+    startRunningLeft() {
+      this.stopAnimate();
+      this.animate(this.obj["Run1L"], -6);
     }
 
     startPuffing() {
