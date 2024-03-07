@@ -167,19 +167,17 @@ hide: true
 
   //touch events that enable animations
   window.addEventListener("touchstart", (event) => {
-    event.preventDefault(); // prevent default browser action
-    if (event.touches[0].clientX > window.innerWidth / 2) {
-      // move right
-      if (currentSpeed === 0) { // if at rest, go to walking
-        mario.startWalking();
-      } else if (currentSpeed === 3) { // if walking, go to running
-        mario.startRunning();
-      }
-    } else {
-      // move left
-      mario.startPuffing();
+  // ...
+  else {
+    // move left
+    if (currentSpeed === 0) { // if at rest, go to walking
+      mario.startWalkingLeft();
+    } else if (currentSpeed === -3) { // if walking, go to running
+      mario.startRunningLeft();
     }
-  });
+  }
+  // ...
+});
 
   //stop animation on window blur
   window.addEventListener("blur", () => {
