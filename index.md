@@ -121,18 +121,8 @@ hide: true
       this.animate(this.obj["Rest"], 0);
     }
 
-    startWalkingLeft() {
-    this.stopAnimate();
-    this.animate(this.obj["WalkL"], -3);
-    }
-
-    startRunningLeft() {
-    this.stopAnimate();
-    this.animate(this.obj["Run1L"], -6);
-    }
-
     stopAnimate() {
-    clearInterval(this.tID);
+      clearInterval(this.tID);
     }
   }
 
@@ -157,27 +147,26 @@ hide: true
       if (event.repeat) {
         mario.stopAnimate();
       } else {
-      if (mario.currentSpeed === 0) {
-        mario.startWalkingLeft();
-      } else if (mario.currentSpeed === -3) {
-        mario.startRunningLeft();
+        mario.startPuffing();
       }
-    }}
+    }
   });
 
   //touch events that enable animations
   window.addEventListener("touchstart", (event) => {
-  // ...
-  else {
-    // move left
-    if (currentSpeed === 0) { // if at rest, go to walking
-      mario.startWalkingLeft();
-    } else if (currentSpeed === -3) { // if walking, go to running
-      mario.startRunningLeft();
+    event.preventDefault(); // prevent default browser action
+    if (event.touches[0].clientX > window.innerWidth / 2) {
+      // move right
+      if (currentSpeed === 0) { // if at rest, go to walking
+        mario.startWalking();
+      } else if (currentSpeed === 3) { // if walking, go to running
+        mario.startRunning();
+      }
+    } else {
+      // move left
+      mario.startPuffing();
     }
-  }
-  // ...
-});
+  });
 
   //stop animation on window blur
   window.addEventListener("blur", () => {
