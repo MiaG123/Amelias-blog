@@ -147,6 +147,11 @@ hide: true
       if (event.repeat) {
         mario.stopAnimate();
       } else {
+        if (mario.currentSpeed === 0) {
+        mario.startWalkingLeft();
+      } else if (mario.currentSpeed === -3) {
+        mario.startRunningLeft();
+      } else {
         mario.startPuffing();
       }
     }
@@ -164,6 +169,12 @@ hide: true
       }
     } else {
       // move left
+       if (currentSpeed === 0) { // if at rest, go to walking
+      mario.startWalkingLeft();
+    } else if (currentSpeed === -3) { // if walking, go to running
+      mario.startRunningLeft();
+    }
+    } else {
       mario.startPuffing();
     }
   });
