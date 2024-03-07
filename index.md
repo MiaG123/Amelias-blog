@@ -37,7 +37,7 @@ hide: true
   /*background position of sprite element
   */
   #mario {
-    background-position: calc({{animations[0].col}} * {{pixels}} * -10px) calc({{animations[0].row}} * {{pixels}}* -1px);
+    background-position: calc({{animations[0].col}} * {{pixels}} * -1px) calc({{animations[0].row}} * {{pixels}}* -1px);
   }
 </style>
 
@@ -62,8 +62,8 @@ hide: true
   class Mario {
     constructor(meta_data) {
       this.tID = null;  //capture setInterval() task ID
-      this.positionX = 0;  // current position of sprite in X direction
-      this.currentSpeed = 0;
+      this.positionX = 50;  // current position of sprite in X direction
+      this.currentSpeed = 50;
       this.marioElement = document.getElementById("mario"); //HTML element of sprite
       this.pixels = {{pixels}}; //pixel offset of images in the sprite, set by liquid constant
       this.interval = 100; //animation time interval
