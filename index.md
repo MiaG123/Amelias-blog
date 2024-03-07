@@ -162,7 +162,7 @@ hide: true
       } else if (mario.currentSpeed === -3) {
         mario.startRunningLeft();
       }
-    }
+    }}
   });
 
   //touch events that enable animations
