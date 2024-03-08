@@ -8,7 +8,7 @@ $low-emph: rgba(white, 0.38);
 $dark-grey : #afb0bb; 
 // $dark-grey : #1F1B24;
 $overlay: mix($dark-grey, white, 95%);
-$overlay-light: mix($dark-grey, white, 86%);
+$overlay-light: mix($dark-grey, rgb(92, 111, 164), 86%);
 
 html, body, input, textarea, select, button {   
   color: $high-emph !important;
@@ -16,7 +16,7 @@ html, body, input, textarea, select, button {
 }
 
 a {
-    color: rgb(196, 131, 221) !important;
+    color: rgb(154, 74, 186) !important;
 }
 
 a:hover {
