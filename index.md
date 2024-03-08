@@ -186,12 +186,6 @@ hide: true
         mario.startRunning();
       }
     }
-    } else if (event.key === ArrowDown) {
-      event.preventDefault();
-      if (event.repeat) {
-        if (mario.currentSpeed === 0 || mario.currentSpeed === 3 || mario.currentSpeed === 6)
-        mario.startCheering();
-      }
     }
   });
 
@@ -214,14 +208,8 @@ hide: true
     } else {
       mario.startPuffing();
     }
-  } else {
-    //pause charecter
-    if (mario.currentSpeed === 0 || mario.currentSpeed === 3 || mario.currentSpeed === 6) { // if at any speed go to cheering
-       mario.startcheering();
-    } 
-    }
   }
-);
+});
 
   //stop animation on window blur
   window.addEventListener("blur", () => {
@@ -241,23 +229,6 @@ hide: true
     sprite.style.transform = `scale(${0.2 * scale})`;
     mario.startResting();
   });
-
-// Function to start the game
-function startGame() {
-  // Add logic to initialize and start your game
-  alert("Game started!");
-}
-
-// Create a button element
-var startButton = document.createElement("button");
-startButton.textContent = "Start Game";
-startButton.id = "start-button";
-
-// Event listener for the start button
-startButton.addEventListener("click", startGame);
-
-// Append the button to the body of the document
-document.body.appendChild(startButton);
 
 </script>
 
