@@ -5,7 +5,7 @@ layout: post
 title: sprite sheet animation
 description: Sprite sheet animation of a dog
 courses: csse: {week: 13}
-type: code code code
+type: code,code,code
 ---
 
 <html lang="en">
