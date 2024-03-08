@@ -186,6 +186,12 @@ hide: true
         mario.startRunning();
       }
     }
+    } else if (event.key === ArrowDown) {
+      event.preventDefault();
+      if (event.repeat) {
+        if (mario.currentSpeed === 0 || mario.currentSpeed === 3 || mario.currentSpeed === 6)
+        mario.startCheering();
+      }
     }
   });
 
@@ -208,8 +214,14 @@ hide: true
     } else {
       mario.startPuffing();
     }
+  } else {
+    //pause charecter
+    if (mario.currentSpeed === 0 || mario.currentSpeed === 3 || mario.currentSpeed === 6) { // if at any speed go to cheering
+       mario.startcheering();
+    } 
+    }
   }
-});
+);
 
   //stop animation on window blur
   window.addEventListener("blur", () => {
