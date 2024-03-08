@@ -1,11 +1,10 @@
 ---
-toc: True
-comments: True
+toc: false
+hide:true
 layout: post
-title: sprite sheet animation
-description: Sprite sheet animation of a dog
-courses: csse: {week: 13}
-type: code,code,code
+title: sprite animation
+description: A sprite animation of some randome dude
+courses: {'csse': {'week': 3}}
 ---
 
 <html lang="en">
