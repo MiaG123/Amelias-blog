@@ -230,7 +230,25 @@ hide: true
     mario.startResting();
   });
 
+// Function to start the game
+function startGame() {
+  // Add logic to initialize and start your game
+  alert("Game started!");
+}
+
+// Create a button element
+var startButton = document.createElement("button");
+startButton.textContent = "Start Game";
+startButton.id = "start-button";
+
+// Event listener for the start button
+startButton.addEventListener("click", startGame);
+
+// Append the button to the body of the document
+document.body.appendChild(startButton);
+
 </script>
+
 Investing in Your Technical Future
 
 Explore the Computer Science Pathway at Del Norte High School. All Del Norte CompSci classes are designed to provide a real-world development experience. Grading is focused on time invested, analytics, participation with peers, and engagement in learning.
