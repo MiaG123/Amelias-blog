@@ -196,6 +196,7 @@ const GameSetup = {
         clouds : { src: "/images/platformer/backgrounds/clouds.png"},
         space: { src: "/images/platformer/backgrounds/planet.jpg" },
         castles: { src: "/images/platformer/backgrounds/castles.png" },
+        Beach: { src: "/images/platformer/backgrounds/beachscene.jpg" },
         loading: { src: "/images/platformer/backgrounds/greenscreen.png" },
         complete: { src: "/images/platformer/backgrounds/OneStar.png" },
         complete2: { src: "/images/platformer/backgrounds/TwoStar.png" },
@@ -372,7 +373,7 @@ const GameSetup = {
         // Avenida Game Level definition...
         const avenidaGameObjects = [
         // GameObject(s), the order is important to z-index...
-        { name: 'beachscene', id: 'background', class: Background, data: this.assets.backgrounds.avenida },
+        { name: 'beach', id: 'background', class: Background, data: this.assets.backgrounds.avenida },
         { name: 'grass', id: 'platform', class: Platform, data: this.assets.platforms.grass },
         { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.2, yPercentage: 0.85 },
         { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.2368, yPercentage: 0.85 },
