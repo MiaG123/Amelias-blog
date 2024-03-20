@@ -196,7 +196,6 @@ const GameSetup = {
         clouds : { src: "/images/platformer/backgrounds/clouds.png"},
         space: { src: "/images/platformer/backgrounds/planet.jpg" },
         castles: { src: "/images/platformer/backgrounds/castles.png" },
-        Beach: { src: "/images/platformer/backgrounds/beachscene.jpg" },
         loading: { src: "/images/platformer/backgrounds/greenscreen.png" },
         complete: { src: "/images/platformer/backgrounds/OneStar.png" },
         complete2: { src: "/images/platformer/backgrounds/TwoStar.png" },
@@ -221,7 +220,7 @@ const GameSetup = {
           width: 40,
           height: 40,
           scaleSize: 80,
-          speedRatio: 2.0,
+          speedRatio: 0.7,
           w: { row: 9, frames: 15 },
           wa: { row: 9, frames: 15 },
           wd: { row: 9, frames: 15 },
@@ -235,13 +234,13 @@ const GameSetup = {
           height: 52.5,
           scaleSize: 60,
           speedRatio: 0.7,
-          w: {row: 1, frames: 3},
-          wa: {row: 1, frames: 3},
-          wd: {row: 2, frames: 3},
+          w: {row: 1, frames: 3}, // Up Movement
+          wa: {row: 1, frames: 3}, // Up-Left Movement 
+          wd: {row: 2, frames: 3}, // Up-Right Movement
           idle: { row: 6, frames: 1, idleFrame: {column: 1, frames: 0} },
-          a: { row: 1, frames: 3, idleFrame: { column: 1, frames: 0 } }, // Right Movement
+          a: { row: 1, frames: 3, idleFrame: { column: 1, frames: 0 } }, // Left Movement
           s: {row: 1, frames: 3}, // Stop the movement 
-          d: { row: 2, frames: 3, idleFrame: { column: 1, frames: 0 } }, // Left Movement 
+          d: { row: 2, frames: 3, idleFrame: { column: 1, frames: 0 } }, // Right Movement 
           runningLeft: { row: 5, frames: 3, idleFrame: {column: 1, frames: 0} },
           runningRight: { row: 4, frames: 3, idleFrame: {column: 1, frames: 0} },
         }
@@ -373,18 +372,18 @@ const GameSetup = {
         // Avenida Game Level definition...
         const avenidaGameObjects = [
         // GameObject(s), the order is important to z-index...
-        { name: 'beach', id: 'background', class: Background, data: this.assets.backgrounds.avenida },
+        { name: 'avenida', id: 'background', class: Background, data: this.assets.backgrounds.avenida },
         { name: 'grass', id: 'platform', class: Platform, data: this.assets.platforms.grass },
         { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.2, yPercentage: 0.85 },
         { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.2368, yPercentage: 0.85 },
         { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.5, yPercentage: 0.85 },
         { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.5368, yPercentage: 0.85 },
-        { name: 'craby', id: 'goomba', class: Goomba, data: this.assets.enemies.goomba, xPercentage: 0.3, minPosition: 0.05},
-        { name: 'craby', id: 'goomba', class: Goomba, data: this.assets.enemies.goomba, xPercentage:  0.5, minPosition: 0.3 },
+        { name: 'goomba', id: 'goomba', class: Goomba, data: this.assets.enemies.goomba, xPercentage: 0.3, minPosition: 0.05},
+        { name: 'goomba', id: 'goomba', class: Goomba, data: this.assets.enemies.goomba, xPercentage:  0.5, minPosition: 0.3 },
         { name: 'mushroom', id: 'mushroom', class: Mushroom, data: this.assets.enemies.mushroom, xPercentage: 0.09},
         { name: 'goombaSpecial', id: 'goomba', class: Goomba, data: this.assets.enemies.goomba, xPercentage:  0.75, minPosition: 0.5 }, //this special name is used for random event 2 to make sure that only one of the Goombas ends the random event
-        { name: 'seagulflying', id: 'flyingGoomba', class: FlyingGoomba, data: this.assets.enemies.flyingGoomba, xPercentage:  0.5, minPosition:  0.05},
-        { name: 'seagulflying', id: 'flyingGoomba', class: FlyingGoomba, data: this.assets.enemies.flyingGoomba, xPercentage:  0.9, minPosition: 0.5},
+        { name: 'flyingGoomba', id: 'flyingGoomba', class: FlyingGoomba, data: this.assets.enemies.flyingGoomba, xPercentage:  0.5, minPosition:  0.05},
+        { name: 'flyingGoomba', id: 'flyingGoomba', class: FlyingGoomba, data: this.assets.enemies.flyingGoomba, xPercentage:  0.9, minPosition: 0.5},
         { name: 'lopez', id: 'player', class: Player, data: this.assets.players.lopez },
         { name: 'tube', id: 'tube', class: Tube, data: this.assets.obstacles.tube },
         { name: 'complete', id: 'background', class: BackgroundTransitions,  data: this.assets.backgrounds.complete },
