@@ -8,7 +8,7 @@ import createSound from './Sound.js';
 class Chat {
     constructor(wordsToAdd){
         this.prohibitedWords = ['westview', 'pee', 'poo', 
-        'multiplayer', 'multi', 'leaderboard', 'enemies', 
+        'multiplayer', 'multi', 'leaderboard', 'enemies',
         'gamelevels', 'interactions', 'sass', 'sassy', 'sas', 
         '911', 'die', 'luigi', 'peach', 'bowser', 'mario', 
         'mr.mortensen', 'mr. mortensen', 'mortensen', 'lopez', 
