@@ -32,4 +32,4 @@ export class Disappearingblockplatform extends BlockPlatform {
         }
     }
 }
-export default Disappearingblockplatform;
+export default BlockPlatform;
