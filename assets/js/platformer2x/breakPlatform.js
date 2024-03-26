@@ -16,7 +16,7 @@ export class BreakPlatform extends BlockPlatform {
     draw() {
         this.ctx.drawImage(this.image, 0, 0, this.canvas.width, this.canvas.height);
     }
-    // Set platform position
+    // Set platform position_
     size() {
         // Formula for Height should be on constant ratio, using a proportion of 832
         const scaledHeight = GameEnv.innerWidth * (1/27);
@@ -24,7 +24,7 @@ export class BreakPlatform extends BlockPlatform {
         const platformX = this.platformX;
         const platformY = (GameEnv.bottom - scaledHeight) * this.platformY;
         // set variables used in Display and Collision algorithms
-        this.bottom = platformY;
+        this.bottom = platformY;_
         this.collisionHeight = scaledHeight;
         this.collisionWidth = scaledWidth;
         //this.canvas.width = this.width;
