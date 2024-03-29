@@ -187,7 +187,6 @@ const GameSetup = {
           scaleSize: 80,
           speedRatio: 0.7,
         }
-        }
       },
       backgrounds: {
         start: { src: "/images/platformer/backgrounds/home.png" },
@@ -209,7 +208,6 @@ const GameSetup = {
           height: 256,
           scaleSize: 80,
           speedRatio: 0.7,
-          w: { row: 10, frames: 15 },
           wa: { row: 11, frames: 15 },
           wd: { row: 10, frames: 15 },
           a: { row: 3, frames: 7, idleFrame: { column: 7, frames: 0 } },
@@ -222,9 +220,8 @@ const GameSetup = {
           height: 40,
           scaleSize: 80,
           speedRatio: 0.7,
-          w: { row: 9, frames: 15 },
-          wa: { row: 9, frames: 15 },
-          wd: { row: 9, frames: 15 },
+          wa: { row: 9, min: 8, frames: 15 },
+          wd: { row: 9, min: 0, frames: 7 },
           a: { row: 1, frames: 15, idleFrame: { column: 7, frames: 0 } },
           s: { row: 12, frames: 15 },
           d: { row: 0, frames: 15, idleFrame: { column: 7, frames: 0 } }
@@ -235,7 +232,6 @@ const GameSetup = {
           height: 52.5,
           scaleSize: 60,
           speedRatio: 0.7,
-          w: {row: 1, frames: 3}, // Up Movement
           wa: {row: 1, frames: 3}, // Up-Left Movement 
           wd: {row: 2, frames: 3}, // Up-Right Movement
           idle: { row: 6, frames: 1, idleFrame: {column: 1, frames: 0} },
@@ -345,13 +341,13 @@ const GameSetup = {
         // Hills Game Level defintion...
         const hillsGameObjects = [
         // GameObject(s), the order is important to z-index...
-        { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.2, yPercentage: 0.85 },
-        { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.2368, yPercentage: 0.85 },
-        { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.2736, yPercentage: 0.85 },
         { name: 'mountains', id: 'background', class: BackgroundMountains,  data: this.assets.backgrounds.mountains },
         { name: 'clouds', id: 'background', class: BackgroundClouds, data: this.assets.backgrounds.clouds },
         { name: 'hills', id: 'background', class: BackgroundHills, data: this.assets.backgrounds.hills },
         { name: 'grass', id: 'platform', class: Platform, data: this.assets.platforms.grass },
+        { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.2, yPercentage: 0.85 },
+        { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.2368, yPercentage: 0.85 },
+        { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.2736, yPercentage: 0.85 },
         { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.6, yPercentage: 1 },
         { name: 'itemBlock', id: 'jumpPlatform', class: JumpPlatform, data: this.assets.platforms.itemBlock, xPercentage: 0.4, yPercentage: 0.65 }, //item block is a platform
         { name: 'goomba', id: 'goomba', class: Goomba, data: this.assets.enemies.goomba, xPercentage: 0.3, yPercentage: 1, minPosition: 0.05},
@@ -417,28 +413,6 @@ const GameSetup = {
         ];
         // Space Game Level added to the GameEnv ...
         new GameLevel( {tag: "space", callback: this.playerOffScreenCallBack, objects: spaceGameObjects} );
-
-        // platform Level definition...
-        const platformGameObjects = [
-          // GameObject(s), the order is important to z-index...
-        { name: 'avenida', id: 'background', class: Background, data: this.assets.backgrounds.avenida },
-        { name: 'grass', id: 'platform', class: Platform, data: this.assets.platforms.grass },
-        { name: 'blocks', id: 'disappearingblockplatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.2, yPercentage: 0.85 },
-        { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.2368, yPercentage: 0.85 },
-        { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.5, yPercentage: 0.85 },
-        { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.5368, yPercentage: 0.85 },
-        { name: 'goomba', id: 'goomba', class: Goomba, data: this.assets.enemies.goomba, xPercentage: 0.3, minPosition: 0.05},
-        { name: 'goomba', id: 'goomba', class: Goomba, data: this.assets.enemies.goomba, xPercentage:  0.5, minPosition: 0.3 },
-        { name: 'mushroom', id: 'mushroom', class: Mushroom, data: this.assets.enemies.mushroom, xPercentage: 0.09},
-        { name: 'goombaSpecial', id: 'goomba', class: Goomba, data: this.assets.enemies.goomba, xPercentage:  0.75, minPosition: 0.5 }, //this special name is used for random event 2 to make sure that only one of the Goombas ends the random event
-        { name: 'flyingGoomba', id: 'flyingGoomba', class: FlyingGoomba, data: this.assets.enemies.flyingGoomba, xPercentage:  0.5, minPosition:  0.05},
-        { name: 'flyingGoomba', id: 'flyingGoomba', class: FlyingGoomba, data: this.assets.enemies.flyingGoomba, xPercentage:  0.9, minPosition: 0.5},
-        { name: 'lopez', id: 'player', class: Player, data: this.assets.players.lopez },
-        { name: 'tube', id: 'tube', class: Tube, data: this.assets.obstacles.tube },
-        { name: 'complete', id: 'background', class: BackgroundTransitions,  data: this.assets.backgrounds.complete },
-        ];
-        // platform Level added to the GameEnv ...
-        new GameLevel( {tag: "platform", callback: this.playerOffScreenCallBack, objects: platformGameObjects} );
 
         // Game Over Level definition...
         const endGameObjects = [
