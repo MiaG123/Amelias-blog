@@ -186,6 +186,17 @@ const GameSetup = {
           height: 204,
           scaleSize: 80,
           speedRatio: 0.7,
+        },
+        breakBlock: {
+          src: "/images/platformer/platforms/brick_block.png",
+          sizeRatio: 83.2,
+          widthRatio: 0.5,
+          heightRatio: 1.0,
+          width: 204,
+          height: 204,
+          scaleSize: 80,
+          speedRatio: 0.7,
+          hitbox: { widthPercentage: 0.4, heightPercentage: -0.2}
         }
       },
       backgrounds: {
@@ -345,7 +356,7 @@ const GameSetup = {
         { name: 'clouds', id: 'background', class: BackgroundClouds, data: this.assets.backgrounds.clouds },
         { name: 'hills', id: 'background', class: BackgroundHills, data: this.assets.backgrounds.hills },
         { name: 'grass', id: 'platform', class: Platform, data: this.assets.platforms.grass },
-        { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.2, yPercentage: 0.85 },
+        { name: 'breakBlock', id: 'breakblockplatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.2, yPercentage: 0.85 },
         { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.2368, yPercentage: 0.85 },
         { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.2736, yPercentage: 0.85 },
         { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.6, yPercentage: 1 },

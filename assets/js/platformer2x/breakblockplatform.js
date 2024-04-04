@@ -2,7 +2,7 @@ import GameControl from './GameControl.js';
 import GameEnv from './GameEnv.js';
 import GameObject from './GameObject.js';
 
-export class disappearingjumpPlatform extends GameObject {
+export class breakjumpPlatform extends GameObject {
     constructor(canvas, image, data, xPercentage, yPercentage, name) {
         super(canvas, image, data, 0.4, -0.2);
         this.platformX = xPercentage * GameEnv.innerWidth;
@@ -22,19 +22,24 @@ export class disappearingjumpPlatform extends GameObject {
     }
 
     collisionAction() {
-        //collision only detects mario and it only applies to the item block
+        // Collision only detects Mario and it only applies to the item block
         if (this.collisionData.touchPoints.other.id === "player" && this.name === "itemBlock") {
-            if (this.relativeX === 0 || this.relativeX === this.canvas.width) {
-                if (this.relativeX === 0) {
-                    GameControl.startRandomEvent();
-                    //console.log("randomEventtriggered", GameControl.randomEventId);
-                };
-                this.relativeX = -1 * this.canvas.width;
-            } else if (this.relativeX === "") {
-                this.relativeX = 0;
-            }
-        }        
+            // Trigger random event when collision occurs
+            GameControl.startRandomEvent();
+    
+            // Remove the block from the canvas
+            this.removeBlock();
+        }
     }
+    
+    removeBlock() {
+        // Assuming this is an HTML5 canvas-based game
+        // Clear the area occupied by the block
+        this.context.clearRect(this.relativeX, this.relativeY, this.width, this.height);
+    
+        // Optionally, you might want to update any internal state or data structures related to the block here
+    }
+    
 
     // Set platform position
     size() {
