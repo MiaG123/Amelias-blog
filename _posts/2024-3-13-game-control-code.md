@@ -68,7 +68,7 @@ GameEnv.destroy();
 - using a game loop gaamecontrol checks wether the level is complete by using the if (currentLevel.isComplete && currentLevel.isComplete()) and if it comes back true then it signals the level is done and trigers the next line of code to determine the next level.
 
 ## Inspect
-- By using Inspect/Elements you can see an objects changes in properties by finding there canvas ID aand clicing on it. This will show you live changes in there position, display, and sizing.
+- By using Inspect/Elements you can see an objects changes in properties by finding there canvas ID and clicing on it. This will show you live changes in there position, form, display, and sizing.
 
 ## Game level to an Array of game levels
 - This is done by taking code that may have only been used to describe one game level and maaking it describe all or multiple game levels.
