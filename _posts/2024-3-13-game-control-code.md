@@ -8,35 +8,25 @@ type: ccc
 courses: {'csse': {'week': 3}}
 ---
 
----
-title: Game Control Code
-comments: True
-layout: post
-description: How java scrit objects are collected
-author: John Mortensen
-type: ccc
-courses: {'csse': {'week': 3}}
----
-
 ## Java script to Game setup
 
-We started by creating a .js file called chocofrog that extends character
+- We started by creating a .js file called chocofrog that extends character
 
-'''
+```
   chocoFrog: {
       src: "/images/platformer/platforms/Chocolatefrog.jpg",
       width: 200,
       height: 200,
       hitbox: { widthPercentage: 0.0, heightPercentage: 0.0 }
-'''
+```
 
-Then we defined it in game setter quitich under assets and enimies
+- Then we defined it in game setter quitich under assets and enimies
 
-'''
+```
 { name: 'chocoFrog', id: 'chocoFrog', class: ChocoFrog, data: assets.enemies.chocoFrog, xPercentage: 0.30, yPercentage: 0.45},
-'''
+```
 
-we then defined it in the code by adding it to the game objects
+- we then defined it in the code by adding it to the game objects
 
 ```
 { name: 'chocoFrog', id: 'chocoFrog', class: ChocoFrog, data: assets.enemies.chocoFrog, xPercentage: 0.30, yPercentage: 0.45},
